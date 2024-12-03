@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios Unificados</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="formulario-container">
+        <section>
+            <h1>Accede a tu Área Clientes</h1>
+            <form action="#" method="post" class="form">
+                <div class="form-group">
+                    <label>Elige tu documento</label>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="document-type" value="dni" checked> DNI o Tarjeta de residencia
+                        </label>
+                        <label>
+                            <input type="radio" name="document-type" value="passport"> Pasaporte
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="document-number">Número de documento</label>
+                    <input type="text" id="document-number" name="document-number" placeholder="DNI o Tarjeta de residencia" required>
+                </div>
+                <div class="form-group">
+                    <label for="birthdate">Fecha de nacimiento</label>
+                    <input type="date" id="birthdate" name="birthdate" required>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" name="remember"> Recordar
+                    </label>
+                </div>
+                <button type="submit" class="btn">Entrar</button>
+            </form>
+        </section>
+        <hr>
+        <section>
+            <h1>Empieza creando tu usuario</h1>
+            <form action="#" method="post" class="form2">
+                <div class="form-group2">
+                    <input type="text" id="name2" name="name" placeholder="Nombre (como sale en el DNI)" required>
+                </div>
+                <div class="form-row2">
+                    <input type="text" id="first-lastname2" name="first-lastname" placeholder="1º apellido (como sale en el DNI)" required>
+                    <input type="text" id="second-lastname2" name="second-lastname" placeholder="2º apellido (como sale en el DNI)">
+                </div>
+                <div class="form-row2">
+                    <select id="document-type2" name="document-type" required>
+                        <option value="" disabled selected>TIPO DE DOCUMENTO</option>
+                        <option value="dni">DNI</option>
+                        <option value="nif">NIF</option>
+                        <option value="cert">CERT. AEAT</option>
+                    </select>
+                    <input type="text" id="document-number2" name="document-number" placeholder="Número de documento" required>
+                </div>
+                <div class="form-row2">
+                    <div class="mobile-group2">
+                        <div class="flag-select2">
+                            <div class="flag-wrapper2">
+                                <span class="flag-icon flag-es2"></span>
+                                <select id="country-code2" name="country-code" onchange="updateFlag(this)">
+                                    <option value="es" data-flag="flag-es2" selected>España</option>
+                                    <option value="us" data-flag="flag-us2">Estados Unidos</option>
+                                    <option value="fr" data-flag="flag-fr2">Francia</option>
+                                </select>
+                            </div>
+                        </div>
+                        <input type="tel" id="mobile2" name="mobile" placeholder="Móvil" required>
+                    </div>
+                    <input type="email" id="email2" name="email" placeholder="Email" required>
+                </div>
+            </form>
+        </section>
+        <hr>
+        <section>
+            <h1>¿Eres nuevo?</h1>
+            <form action="#" method="post" class="form3">
+                <div class="form-group3">
+                    <label for="email3">Email</label>
+                    <input type="email" id="email3" name="email" placeholder="Introduce tu email" required>
+                </div>
+                <div class="form-group3">
+                    <label for="phone3">Teléfono</label>
+                    <input type="tel" id="phone3" name="phone" placeholder="Tu teléfono" required>
+                </div>
+                <div class="form-group3 password-group3">
+                    <label for="password3">Contraseña</label>
+                    <div class="password-wrapper3">
+                        <input type="password" id="password3" name="password" placeholder="Introduce tu contraseña" required>
+                        <button type="button" class="toggle-password3" onclick="togglePassword('password3')">
+                            👁️
+                        </button>
+                    </div>
+                </div>
+                <div class="form-group3 password-group3">
+                    <label for="confirm-password3">Confirma tu contraseña</label>
+                    <div class="password-wrapper3">
+                        <input type="password" id="confirm-password3" name="confirm-password" placeholder="Confirmar contraseña" required>
+                        <button type="button" class="toggle-password3" onclick="togglePassword('confirm-password3')">
+                            👁️
+                        </button>
+                    </div>
+                </div>
+                <div class="form-group3 checkbox-group3">
+                    <label>
+                        <input type="checkbox" name="privacy-policy" required>
+                        He leído y acepto <a href="#">Política de privacidad</a>
+                    </label>
+                </div>
+                <div class="form-group3 checkbox-group3">
+                    <label>
+                        <input type="checkbox" name="commercial-communications">
+                        Sí, acepto recibir comunicaciones comerciales y ofertas personalizadas según mi perfil.
+                    </label>
+                </div>
+                <button type="submit" class="btn3">Crea tu cuenta</button>
+            </form>
+        </section>
+    </div>
+</body>
+</html>
